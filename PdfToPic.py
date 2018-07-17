@@ -26,10 +26,10 @@ def _run_convert(filename, page, res=120):
     pdf_bytes.seek(0)
 
     img = Image(file=pdf_bytes, resolution=res)
-    img.format = 'png'
+    img.format = 'jpg'
     img.compression_quality = 90
     img.background_color = Color("white")
-    img_path = '%s%d.png' % (filename[:filename.rindex('.')], idx)
+    img_path = '%s%d.jpg' % (filename[:filename.rindex('.')], idx)
     img.save(filename=img_path)
     img.destroy()
 
